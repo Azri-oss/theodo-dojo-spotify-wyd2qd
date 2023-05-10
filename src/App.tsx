@@ -3,6 +3,7 @@ import './App.css';
 import { useState } from 'react';
 import { fetchTracks } from './lib/fetchTracks';
 import { useQuery } from '@tanstack/react-query';
+import { SavedTrack } from 'spotify-types';
 
 const trackUrls = [
   'https://p.scdn.co/mp3-preview/742294f35af9390e799dd96c633788410a332e52',
@@ -11,6 +12,7 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/0f6b8a3524ec410020457da4cdd7717f9addce2f',
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
+
 
 const App = () => {
   const [trackIndex, setTrackIndex] = useState(0);
@@ -23,7 +25,8 @@ const App = () => {
     queryKey: ['tracks'],
     queryFn: fetchTracks,
   });
-
+  let name ; let moi;
+if (tracks){name=tracks[0]?.track.name; moi=tracks[0]?.track.preview_url}
   return (
     <div className="App">
       <header className="App-header spotify">
@@ -32,10 +35,11 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test !</p>
-        <audio src={trackUrls[trackIndex]} autoPlay controls />
+        <p> {name}</p>
+        <audio src={moi} autoPlay controls />
         <button onClick={goToNextTrack}>Next track</button>
       </div>
-
+      {/* tracks[0]?.track.preview_url */}
       <div className="App-buttons"></div>
     </div>
   );

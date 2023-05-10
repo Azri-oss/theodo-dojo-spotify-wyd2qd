@@ -4,7 +4,7 @@ import './App.css';
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
+      <header className="App-header spotify">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">Bienvenue sur le blind test</h1>
       </header>

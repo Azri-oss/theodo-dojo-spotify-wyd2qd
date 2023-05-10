@@ -16,4 +16,8 @@ const App = () => {
   );
 };
 
+<audio src={trackUrls[0]} autoPlay controls />
+
 export default App;
+
+

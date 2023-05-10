@@ -13,6 +13,3 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     </QueryClientProvider>
   </React.StrictMode>,
 );
-
-  
-<audio src={trackUrls[0]} autoPlay controls />
